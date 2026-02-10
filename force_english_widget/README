@@ -52,3 +52,7 @@ class MyModel(models.Model):
 '''views.xml
 <field name="name" widget="force_english"/>
 '''
+## Support
+For support or inquiries:
+- Email: mokashfi200@gmail.com
+- WhatsApp: +249918790007
