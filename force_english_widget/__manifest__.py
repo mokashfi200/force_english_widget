@@ -15,7 +15,7 @@ The widget works seamlessly across Odoo forms, wizards, and editable lists,
 without requiring users to manually switch their keyboard language.
     """,
     "category": "Technical",
-    "author": "Ahmed Al-Mokahfi",
+    "author": "Ahmed Al-Mokashfi",
     "license": "LGPL-3",
     "depends": ["web"],
     "assets": {
