@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="force_english_widget.FieldForceEnglish">
+        <input t-ref="input" type="text" class="o_input" placeholder="English only"/>
+    </t>
+</templates>

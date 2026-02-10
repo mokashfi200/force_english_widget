@@ -1,0 +1,54 @@
+Force English Widget
+===================
+
+## Overview
+Force English Widget is a custom Odoo widget designed to automatically convert
+Arabic keyboard input into English characters.
+
+This widget is particularly useful for fields that require standardized English
+data entry, such as , reference codes, tracking numbers, and other identifiers
+that must be stored in English format.
+
+Instead of forcing users to manually switch their keyboard layout, the widget
+allows them to continue typing with an Arabic keyboard while transparently
+converting the input into English characters in real time.
+
+---
+
+## Features
+- Automatically converts Arabic keyboard input to English characters
+- Works with Char fields
+- Converts input in real time
+- Optional automatic capitalization
+- Compatible with Odoo 18 and Odoo 19
+- Works in:
+  - Form views
+  - Wizards
+  - Editable list (tree) views
+- Lightweight and clean implementation
+- No impact on backend performance
+
+---
+
+## Installation
+1. Download the module and place it inside your Odoo addons directory:
+    ```
+    /path/to/odoo/addons/force_english_widget
+    ``` 
+2. Update the Odoo app list:
+    - Go to Apps
+    - Click on "Update Apps List"
+3. Search for "Force English Widget" and click "Install"
+4. The widget is now available for use in your Odoo instance.
+5. To use the widget, add `widget="force_english"` to any Char field in your views.
+Example:
+'''models.py
+from odoo import models, fields
+class MyModel(models.Model):
+    _name = 'my.model'
+    
+    name = fields.Char(string="Name")
+'''
+'''views.xml
+<field name="name" widget="force_english"/>
+'''
