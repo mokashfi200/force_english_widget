@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, useRef, onMounted } from "@odoo/owl";
+import { Component, useRef } from "@odoo/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { useInputField } from "@web/views/fields/input_field_hook";
 import { registry } from "@web/core/registry";
@@ -27,21 +27,23 @@ export class FieldForceEnglish extends Component {
             refName: "input",
             parse: (v) => v || "",
         });
-
-        onMounted(() => {
-            if (this.props.readonly) return;
-            const input = this.inputRef.el;
-            if (!input) return;
-
-            input.style.direction = "ltr";
-            input.addEventListener("input", () => {
-                let value = input.value || "";
-                value = arabicToEnglishKeyboard(value).toUpperCase();
-                input.value = value;
-                this.props.record.update({ [this.props.name]: value });
-            });
-        });
     }
+
+    // onInput(ev) {
+    //     let value = ev.target.value || "";
+    //     value = arabicToEnglishKeyboard(value).toUpperCase();
+
+    //     ev.target.value = value;
+    //     this.props.update(value);
+    //     // this.props.record.update({ [this.props.name]: value });
+    //      // ⭐ التحديث الصحيح في Odoo OWL field widget
+    //     this.props.record.updateField(this.props.name, value);
+    // }
+    onInput(ev) {
+    let value = ev.target.value || "";
+    value = arabicToEnglishKeyboard(value).toUpperCase();
+    ev.target.value = value;
+}
 }
 
 registry.category("fields").add("force_english", {
